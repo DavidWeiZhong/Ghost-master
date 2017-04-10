@@ -61,6 +61,7 @@ public class RegistActivity extends AppCompatActivity {
                 SharedUtil.putString("password", password);
                 Toast.makeText(this, "注册成功，请牢记密码!", Toast.LENGTH_LONG).show();
                 startActivity(new Intent(this, LoginActivity.class));
+
         }
     }
 
