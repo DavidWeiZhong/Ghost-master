@@ -38,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         if (SharedUtil.getString("username") != null && SharedUtil.getString("password") != null) {
             et_username.setText(mUsername);
             et_password.setText(mPassword);
+            et_password.postInvalidate();
             Log.d("print", "" + mUsername + "---" + mPassword);
         }
 
@@ -49,7 +50,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void initView() {
         et_username = (EditText) findViewById(R.id.et_username);
-        et_password = (EditText) findViewById(R.id.et_username);
+        et_password = (EditText) findViewById(R.id.et_password);
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_regist = (Button) findViewById(R.id.btn_regist);
 
@@ -76,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
                         return;
                     } else {
                         Toast.makeText(this, "请输入正确的用户名密码", Toast.LENGTH_LONG).show();
+                        return;
                     }
                 }
                 Toast.makeText(this, "没有该用户，请先注册！", Toast.LENGTH_LONG).show();
